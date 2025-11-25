@@ -16,13 +16,15 @@ An AI Socratic tutor that selects instructional actions to guide students throug
 
 ### Action Space (Discrete - 5 Actions)
 
-| Action ID | Description | Reward |
-|-----------|-------------|--------|
-| 0 | Ask a probing question | +5 |
-| 1 | Provide a hint | +3 |
-| 2 | Give positive encouragement | -2 |
-| 3 | Present a challenging question | +8 |
-| 4 | Give corrective feedback | +4 |
+| Action ID | Description | Effect on Student |
+|-----------|-------------|-------------------|
+| 0 | Ask Socratic question | ↑ Engagement, ↑ Confusion, ↑ Effort |
+| 1 | Give hint | ↑ Engagement, ↓ Confusion, ↑ Effort |
+| 2 | Provide code example | ↓ Engagement, ↓ Confusion, ↓ Effort |
+| 3 | Encourage reflection | ↑↑ Engagement, ↓ Confusion, ↑↑ Effort |
+| 4 | Ask student to explain | ↑ Engagement, ↓ Confusion, ↑ Effort |
+
+**Note:** Actual effects are modulated by hidden student skill, stochastic noise, and diminishing returns for action repetition.
 
 ### Observation Space
 - **Engagement level** (0–1)
@@ -32,12 +34,23 @@ An AI Socratic tutor that selects instructional actions to guide students throug
 - **Steps taken in session**
 
 ### Reward Structure
-Fixed rewards based on pedagogical effectiveness:
-- **Socratic Questions** (+5): Promotes deep thinking
-- **Hints** (+3): Supports progress while maintaining effort
-- **Encouragement** (-2): May reduce active learning
-- **Reflection Prompts** (+8): Strengthens metacognition
-- **Explanation Requests** (+4): Reinforces comprehension
+Dynamic reward system based on **actual learning improvement**:
+
+**Delta-Based Rewards:**
+- `+50 × Δ(engagement)` - Rewards increased student engagement
+- `+40 × Δ(confusion reduction)` - Rewards decreased confusion
+- `+20 × state progression` - Bonus for advancing learning states (e.g., Confused → Engaged → Mastery)
+
+**Penalties:**
+- `-5.0` if confusion > 0.9 (student overwhelmed)
+- `-8.0` if engagement < 0.05 (student disengaged)
+- `-0.1` per step (time penalty for teaching efficiency)
+
+**Key Features:**
+- Rewards reflect measured pedagogical impact, not fixed action values
+- Stochastic noise adds environmental uncertainty
+- Diminishing returns for repeating the same action
+- Hidden per-episode student skill parameter varies responsiveness
 
 ## Project Structure
 
