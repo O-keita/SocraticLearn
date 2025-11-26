@@ -95,10 +95,9 @@ SocraticLearn/
 ## Environment Visualization
 
 ### Demo Video
-Watch the environment in action with random and trained agents:
+Watch the environment in action:
 
-**Static Random Agent Demo:**  
-<video controls src="demos/simulation_30s.mp4" title="Title"></video>
+[<video controls src="demos/simulation_30s.mp4" title="Title"></video>](https://github.com/user-attachments/assets/5c5f9f93-8ec8-49ef-ae52-f0a35f136a0a)
 
 ### Visual Elements
 The environment features:
