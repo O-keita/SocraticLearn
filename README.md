@@ -1,7 +1,7 @@
 # SocraticLearn: Reinforcement Learning Socratic Tutor
 
 **Student:** Omar Keita  
-**Repository:** [https://github.com/O-keita/SocraticLearn.git](https://github.com/O-keita/SocraticLearn.git)  
+**Repository:** [https://github.com/O-keita/SocraticLearn.git]([https://github.com/O-keita/SocraticLearn.git](https://github.com/O-keita/Omar_Keita_rl_summative_Socratic.git))  
 **Video Demonstration:** [https://youtu.be/1quyeS90zDI](https://youtu.be/1quyeS90zDI)
 
 ## Project Overview
