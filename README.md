@@ -102,13 +102,9 @@ Watch the environment in action with random and trained agents:
 
 ### Visual Elements
 The environment features:
-- **Teacher sprite** - Represents the AI Socratic tutor agent
-- **Student sprites** (5 states) - Visual representation of learning progression:
-  - **Passive** - Low engagement, high confusion
-  - **Confused** - Struggling with concepts
-  - **Engaged** - Actively participating
-  - **Reflecting** - Deep thinking and metacognition
-  - **Mastery** - Goal state, comprehensive understanding
+- **Teacher (AI)** - Represents the AI Socratic tutor agent
+- **Student** - Visual representation of learning progression:
+- **Questions Tab** - Where the questions from AI appear
 - **Real-time metrics display** - Shows engagement, confusion, and effort levels
 - **Action feedback** - Visual indicators of tutor interventions
 - **State transitions** - Smooth animations between learning states
